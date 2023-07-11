@@ -24,6 +24,8 @@ Note Taker allows you to create, save and delete notes
 
 Assists you in keeping track of important notes and information needed for projects
 
+![Note Taker App](./public/assets/images/note-taker-app.gif)
+
 ## Installation
 
 Express and UUID packages used, you'll need to run 'npm install' and get the appropriate packs
