@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 const notesFilePath = path.join(__dirname, 'db', 'db.json');
 
-// Get Notes - Callback
+// GET Notes - Callback
 const getNotesFromFile = (callback) => {
   fs.readFile(notesFilePath, 'utf8', (err, data) => {
     if (err) {
@@ -23,7 +23,7 @@ const getNotesFromFile = (callback) => {
   });
 };
 
-// Save Notes - Callback
+// SAVE Notes - Callback
 const saveNotesToFile = (notes, callback) => {
   fs.writeFile(notesFilePath, JSON.stringify(notes), (err) => {
     if (err) {
@@ -59,5 +59,28 @@ app.post('/api/notes', (req, res) => {
         res.status(201).json({ success: true });
       }
     });
+  });
+});
+
+// DELETE /api/notes/:id - Deletes specific note
+app.delete('/api/notes/:id', (req, res) => {
+  const noteId = req.params.id;
+
+  getNotesFromFile((notes) => {
+    const noteIndex = notes.findIndex((note) => note.id === noteId);
+
+    if (noteIndex === -1) {
+      res.status(404).json({ error: 'Note not found' });
+    } else {
+      notes.splice(noteIndex, 1);
+
+      saveNotesToFile(notes, (err) => {
+        if (err) {
+          res.status(500).json({ error: 'Server error' });
+        } else {
+          res.json({ success: true });
+        }
+      });
+    }
   });
 });
