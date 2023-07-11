@@ -84,3 +84,18 @@ app.delete('/api/notes/:id', (req, res) => {
     }
   });
 });
+
+// GET /notes - Returns notes.html file
+app.get('/notes', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'notes.html'));
+});
+
+// GET * - Returns index.html file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Start the server
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});
