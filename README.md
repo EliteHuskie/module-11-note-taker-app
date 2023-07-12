@@ -44,6 +44,8 @@ Fork the repository
 
 Run 'npm start' in terminal window
 
+Visit http://localhost:3000 to test the note taker application (Heroku direct URL is provided as well if it's desired to test the application live instead of forking.)
+
 ## License
 
 This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
