@@ -5,6 +5,8 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -96,6 +98,6 @@ app.get('*', (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
