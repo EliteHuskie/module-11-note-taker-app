@@ -30,7 +30,9 @@ Direct URL: https://note-taker-app-2023-cf0ac083be45.herokuapp.com/
 
 ## Installation
 
-Express and UUID packages used, you'll need to run 'npm install' and get the appropriate packs
+Express and UUID packages used
+
+Will need to run 'npm install' and get the appropriate packages specified
 
 ## Contributing
 
@@ -39,6 +41,7 @@ Not Applicable
 ## Tests
 
 Fork the repository
+
 Run 'npm start' in terminal window
 
 ## License
