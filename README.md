@@ -26,6 +26,8 @@ Assists you in keeping track of important notes and information needed for proje
 
 ![Note Taker App](./public/assets/images/note-taker-app.gif)
 
+Direct URL: https://note-taker-app-2023-cf0ac083be45.herokuapp.com/
+
 ## Installation
 
 Express and UUID packages used, you'll need to run 'npm install' and get the appropriate packs
